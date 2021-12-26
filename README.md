@@ -4,6 +4,7 @@
 The website uses the Django Framework in Python for the backend and HTML and CSS for the frontend.
 
 ## Run the website on you local server
+Clone the repository
 Install the required dependencies using `pip install -r requirements.txt` in the Command Line
 Navigate to the folder containing manage.py and run `python manage.py runserver` in the Command Line
 Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) on you browser to view the website
