@@ -1,0 +1,18 @@
+<head>
+    <title>Tweeter | Home</title>
+</head>
+
+{% extends "timeline/layout.html" %}
+{% block body %}
+
+<div class="posts">
+    {% for post in posts %}
+        <div onclick="window.location='/post/{{post.id}}'" class="post">
+            <h5><a href="{% url 'accounts' username=post.author.username %}">{{post.author}}</a></h5>
+            <p>{{post.date_time}}</p>
+            <p>{{post.content}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<head>
+    <title>Tweeter | Followers</title>
+</head>
+
+{% extends "timeline/layout.html" %}
+{% block body %}
+
+{% for follower in followers %}
+<ul>
+    <li><a href="{% url 'accounts' username=follower.username %}">{{ follower.username }}</a></li>
+</ul>
+{% endfor %}
+
+{% endblock %}

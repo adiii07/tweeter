@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(29, 29, 29);
+    color: aliceblue;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 10px;
+    left: 30px;
+    margin-bottom: 100px;
+}
+
+.side-nav {
+    float: left;
+    display: flex;
+    position: fixed;
+    flex-flow: column nowrap;
+    width: 200px;
+    margin: 30px;
+    border: 1px rgb(61, 61, 61) solid;
+    text-align: center;
+    padding: 20px 0;
+    margin-right: 330px;
+}
+
+.posts {
+    margin-left: 360px;
+    margin-top: 100px;
+}
+
+.post {
+    border: rgb(100, 100, 100) 1px solid;
+    margin: 50px 0;
+    margin-right: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: aliceblue;
+}
+
+.account, .form, .replies, .content, .link, .title, ul {
+    margin-left: 300px;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.content {
+    margin-top: 100px;
+    border: 1px rgb(100, 100, 100) solid;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+.replies {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.reply{
+    border: 1px rgb(100, 100, 100) solid;
+    padding: 10px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+.account {
+    margin-top: 100px;
+}
+
+h4 {
+    margin: 10px;
+}
+
+.btn {
+    margin: 10px 0;
+}
+
+.form {
+    margin-top: 100px;
+}

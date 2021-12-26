@@ -1,0 +1,15 @@
+<head>
+    <title>Tweeter | Reply</title>
+</head>
+
+{% extends "timeline/layout.html" %}
+{% block body %}
+
+<form class="form" method='post' enctype="multipart/form-data">
+    <h3>Reply</h3>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Reply" class="btn btn-success">
+</form>
+
+{% endblock %}

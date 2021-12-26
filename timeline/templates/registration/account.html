@@ -1,0 +1,43 @@
+<head>
+    <title>Tweeter | Account</title>
+</head>
+
+{% extends "timeline/layout.html" %}
+{% block body %}
+<div class="account">
+<h4>{{ user.username }}</h4>
+<h4>{{ user.first_name }} {{ user.last_name }}</h4>
+<h4>{{ user.email }}</h4>
+
+<a style="text-decoration: underline;" href="{% url 'followers' username=user.username %}">Followers</a>
+<a style="text-decoration: underline;" href="{% url 'following' username=user.username %}">Following</a>
+
+{% if current_user.username != user.username %}
+{% if following %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-info">UnFollow</button>
+    </form>
+{% else %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Follow</button>
+    </form>
+{% endif %}
+{% endif %}
+
+<a style="text-decoration: underline;" href="{% url 'index' %}">Go Home</a>
+
+<div class="posts" style="margin-left: 0;">
+    {% for post in tweets %}
+        <div onclick="window.location='/post/{{post.id}}'" class="post">
+            <h5><a href="{% url 'accounts' username=post.author.username %}">{{post.author}}</a></h5>
+            <p>{{post.date_time}}</p>
+            <p>{{post.content}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+
+{% endblock %}
