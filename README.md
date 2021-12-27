@@ -17,7 +17,7 @@ Password: test_pass`
 
 ### Following People
 Once you have created your account, you can start following people.
-You can following me by going to [http://127.0.0.1:8000/account/aditya](http://127.0.0.1:8000/account/aditya)
+You can following me by going to [https://tweeter-brs.herokuapp.com/account/aditya](https://tweeter-brs.herokuapp.com/account/aditya) and follow test user by going to [https://tweeter-brs.herokuapp.com/account/test_user1](https://tweeter-brs.herokuapp.com/account/test_user1)
 
 ### New Tweets
 You can post tweets using by going to the new tweet page by clicking new tweet in the **navigation area on the left**
