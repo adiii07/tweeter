@@ -1,4 +1,4 @@
-**Deployed website - [https://tweeter-brs.herokuapp.com/](https://tweeter-brs.herokuapp.com/)**
+**Deployed website - [https://tweeter-brs.herokuapp.com/](https://tweeter-brs.herokuapp.com/)**  
 **Disclaimer:** This website is under development and contains bugs. Feel free to send bugs and new feature ideas to [my email](mailto:adityabala2005@gmail.com).
 
 ## Tech
