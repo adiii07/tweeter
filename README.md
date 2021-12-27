@@ -1,4 +1,4 @@
-**Deployed website will be available soon**
+**Deployed website - [https://tweeter-brs.herokuapp.com/](https://tweeter-brs.herokuapp.com/)**
 
 ## Tech
 The website uses the Django Framework in Python for the backend and HTML and CSS for the frontend.
