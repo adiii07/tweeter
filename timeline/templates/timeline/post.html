@@ -6,16 +6,25 @@
 {% block body %}
 
 <div class=content>
-    <p><a href="{% url 'accounts' username=post.author.username %}">{{post.author.username}}</a></p>
+    <p style="font-weight: 700;"><a href="{% url 'accounts' username=post.author.username %}">{{post.author.username}}</a></p>
+    <p style="font-weight: 700;">{{ post.date_time }}</p>
     <p>{{ post.content }}</p>
-    <a href="{% url 'new_reply' post_id=post.id %}">Reply</a>
+    <form action="{% url 'like_post' post.pk %}" method="POST">
+        {% csrf_token %}
+        {% if not liked %}
+            <button type="submit" name="post_id" value="{{post.id}}" class="btn btn-outline-info btn-sm">Like</button> {{ total_likes }} Likes
+        {% else %}
+            <button type="submit" name="post_id" value="{{post.id}}" class="btn btn-outline-secondary btn-sm">Unlike</button> {{ total_likes }} Likes
+        {% endif %}
+    </form>
+    <a href="{% url 'new_reply' post_id=post.id %}" class="btn-link">Reply</a>
 </div>
 
 <div class="replies">
 <h3>Replies</h3>
 {% for reply in replies %}
-    <p><a href="{% url 'accounts' username=reply.author.username %}">{{reply.author.username}}</a></p>
     <div class="reply">
+        <p style="font-weight: 700;"><a href="{% url 'accounts' username=reply.author.username %}">{{reply.author.username}}</a></p>
         <p>{{ reply.content }}</p>
     </div>
 {% endfor %}

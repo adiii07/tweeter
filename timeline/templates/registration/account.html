@@ -26,9 +26,10 @@
 {% endif %}
 {% endif %}
 
-<a style="text-decoration: underline;" href="{% url 'index' %}">Go Home</a>
+<a style="text-decoration: underline;margin-left: 20px;" href="{% url 'index' %}">Go Home</a>
 
-<div class="posts" style="margin-left: 0;">
+<h3 style="margin-bottom: 10px;margin-top: 100px;">Tweets</h3>
+<div class="posts" style="margin-left: 0;margin-top: 0px;">
     {% for post in tweets %}
         <div onclick="window.location='/post/{{post.id}}'" class="post">
             <h5><a href="{% url 'accounts' username=post.author.username %}">{{post.author}}</a></h5>

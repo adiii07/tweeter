@@ -41,6 +41,18 @@ def signup(request):
     {'form': form})
 
 @login_required
+def like(request, pk):
+    post = Post.objects.get(id=request.POST.get('post_id'))
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return redirect('post', post_id=pk)
+
+@login_required
 def create_post(request):
     if request.method == 'POST':
         form = CreatePostForm(request.POST)
@@ -100,10 +112,16 @@ def followers(request, username):
 def post(request, post_id):
     post = Post.objects.get(id=post_id)
     replies = Reply.objects.filter(post=post)
+    likes = post.count_likes()
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        liked = True
     return render(request, "timeline/post.html", {
         "post": post,
         "replies": replies[::-1],
-        "current_user": request.user
+        "current_user": request.user,
+        "total_likes": likes,
+        "liked": liked,
     })
 
 @login_required

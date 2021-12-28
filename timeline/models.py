@@ -18,6 +18,10 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     date_time = models.DateTimeField(default=datetime.now, blank=True)
     content = models.TextField(max_length=500)
+    likes = models.ManyToManyField(User, related_name="tweets")
+
+    def count_likes(self):
+        return self.likes.count()
 
 class Reply(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

@@ -9,5 +9,7 @@ urlpatterns = [
     path('account/<str:username>/following', views.following, name="following"),
     path('account/<str:username>/followers', views.followers, name="followers"),
     path('post/<int:post_id>/', views.post, name="post"),
-    path('post/<int:post_id>/reply', views.new_reply, name="new_reply")
+    path('post/<int:post_id>/reply', views.new_reply, name="new_reply"),
+    path('like/<int:pk>', views.like, name='like_post'),
+    
 ]
